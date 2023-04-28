@@ -43,6 +43,12 @@ export default class HomeScreen extends Component {
                         <Text style={styles.bgDigit}>2</Text>
                         <Image source={require("../assets/meteor_icon.png")} style={styles.iconImage}></Image>
                     </TouchableOpacity>
+                    <TouchableOpacity style={styles.routeCard} onPress={() =>
+                        this.props.navigation.navigate("Updates")
+                    }>
+                        <Text style={styles.routeText}>Atualizações</Text>
+                        <Image source={require("../assets/rocket_icon.png")} style={{ width: 80, height: 80 }}></Image>
+                    </TouchableOpacity>
                 </ImageBackground>
             </View>
         );

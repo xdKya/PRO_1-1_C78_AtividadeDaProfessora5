@@ -18,6 +18,7 @@ function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="IssLocation" component={IssLocationScreen} />
         <Stack.Screen name="Meteors" component={MeteorScreen} />
+        <Stack.Screen name="Updates" component={UpdateScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
