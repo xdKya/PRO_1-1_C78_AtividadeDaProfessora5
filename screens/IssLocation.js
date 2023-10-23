@@ -12,32 +12,20 @@ import {
     Touchable
 } from "react-native";
 import MapView, { Marker } from 'react-native-maps';
-import axios from "axios";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default class IssLocationScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            location: {},
-            
+                       
         };
     }
 
     componentDidMount() {
-        this.getIssLocation()
+       
     }
 
-    getIssLocation = () => {
-        axios
-            .get("https://api.wheretheiss.at/v1/satellites/25544")
-            .then(response => {
-                this.setState({ location: response.data })
-            })
-            .catch(error => {
-                Alert.alert(error.message)
-            })
-    }
 
     render() {
         if (Object.keys(this.state.location).length === 0) {
@@ -60,21 +48,6 @@ export default class IssLocationScreen extends Component {
                             <Text style={styles.titleText}>Localização da EEI</Text>
                         </View>
                         <View style={styles.mapContainer}>
-                            <MapView
-                                style={styles.map}
-                                region={{
-                                    latitude: this.state.location.latitude,
-                                    longitude: this.state.location.longitude,
-                                    latitudeDelta: 100,
-                                    longitudeDelta: 100
-                                }}
-                            >
-                                <Marker
-                                    coordinate={{ latitude: this.state.location.latitude, longitude: this.state.location.longitude }}
-                                >
-                                    <Image source={require('../assets/iss_icon.png')} style={{ height: 50, width: 50 }} />
-                                </Marker>
-                            </MapView>
                         </View>
                     </ImageBackground>
                 </View>
