@@ -1,0 +1,23 @@
+ <View style={styles.infoContainer}>
+                            <Text style={styles.infoText}>Latitude: {this.state.location.latitude}</Text>
+                            <Text style={styles.infoText}>Longitude: {this.state.location.longitude}</Text>
+                            <Text style={styles.infoText}>Altitude (KM): {this.state.location.altitude}</Text>
+                            <Text style={styles.infoText}>Velocidade (KM/H): {this.state.location.velocity}</Text>
+                        </View>
+
+
+
+
+    infoContainer: {
+        flex: 0.2,
+        backgroundColor: 'white',
+        marginTop: -10,
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30,
+        padding: 30
+    },
+    infoText: {
+        fontSize: 15,
+        color: "black",
+        fontWeight: "bold"
+    }
